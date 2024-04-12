@@ -25,7 +25,7 @@ public class DevelopmentConfiguration {
 	@Bean
 	public DataSource dataSource() throws SQLException {
 		DataSource dataSource = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).setName(databaseName)
-				.addScript("classpath:com/scalableservices/config/salesorder-schema-developement.sql").build();
+				.addScripts("classpath:h2/schema.sql", "classpath:h2/data.sql").build();
 		LOGGER.info("H2 database is running with metadata: {}", dataSource.getConnection().getMetaData().toString());
 		return dataSource;
 	}
