@@ -1,8 +1,0 @@
-spring:
-  profiles:
-    active: development
-  application:
-    name: Api-Gateway
-  cloud:
-    config:
-      uri: http://localhost:5055
