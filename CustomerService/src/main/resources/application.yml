@@ -1,0 +1,16 @@
+server:
+  port: 5051
+db:
+  name: customerdb
+spring:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate.ddl-auto: update  
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

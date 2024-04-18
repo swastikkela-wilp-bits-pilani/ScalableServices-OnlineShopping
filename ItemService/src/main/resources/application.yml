@@ -1,0 +1,16 @@
+server:
+  port: 5052
+db:
+  name: itemdb
+spring:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate.ddl-auto: update  
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

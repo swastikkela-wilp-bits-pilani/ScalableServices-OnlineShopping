@@ -1,4 +1,3 @@
-export const PROXY_SERVER = "http://localhost:5555";
-export const CUSTOMER_SERVICE: string = PROXY_SERVER + "/customersApi/customers/";
-export const ITEM_SERVICE: string = PROXY_SERVER + "/itemsApi/items/";
-export const SALESORDER_SERVICE: string = PROXY_SERVER + "/salesApi/orders/";
+export const CUSTOMER_SERVICE: string = "http://localhost:5051/customers/";
+export const ITEM_SERVICE: string = "http://localhost:5052/items/";
+export const SALESORDER_SERVICE: string = "http://localhost:5053/orders/";
