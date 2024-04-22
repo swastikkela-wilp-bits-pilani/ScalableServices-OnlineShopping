@@ -1,0 +1,17 @@
+#background-image {
+    background-image: url('https://ewm.swiss/application/files/8216/1597/9679/E-commerce_web_design_EWM_SA_Digital_Agency_Geneva.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 83vh; /* Adjust the height based on your content */
+    opacity: 85%;
+  }
+  .welcome-text {
+    text-align: center;
+    margin-top: 10px;
+    color: #ffffff; /* Change the text color to white */
+  }
+  
+  .technology-details h3 {
+    color: #ffffff; /* Change the text color of the heading to white */
+    text-align: center;
+  }

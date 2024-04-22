@@ -1,3 +1,10 @@
 h1{
     text-align: center;
+    font-family: 'Roboto', sans-serif; /* Use a modern sans-serif font */
+    font-size: 36px; /* Adjust the font size as needed */
+    font-weight: 600; /* Use a bold font weight for emphasis */
+    color: #333333; /* Choose a dark gray color for the text */
+    text-transform: uppercase; /* Convert text to uppercase for a stylish look */
+    letter-spacing: 1px; /* Add letter spacing for improved readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle text shadow for depth */
 }

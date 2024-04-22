@@ -1,3 +1,54 @@
-table{
-    width: 100%;
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442;
+  /* red */
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4CAF50;
+  /* Green */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+  /* Darker green on hover */
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.ui-dialog-titlebar {
+  background-color: #4CAF50;
+  /* Green */
+  color: white;
+  padding: 10px;
+}
+
+.add-item-button {
+  text-align: center;
+}
+
+.ui-dialog-content {
+  padding: 20px;
+}
+
+.ui-dialog-buttonpane {
+  padding: 20px;
+  text-align: right;
 }

@@ -1,43 +1,51 @@
-<div style="margin-bottom: 10px">
-  <p-toast [style]="{marginTop: '80px'}"></p-toast>
-  <button type="button" pButton (click)="openDialog()" label="Add Customer" ></button>
-</div>
-<!-- Table to display Customers-->
-<p-table [columns]="displayedColumns" [value]="customers" selectionMode="single" [(selection)]="data" (onRowSelect)="onRowSelect($event)"
-  [paginator]="true" [rows]="15">
-  <ng-template pTemplate="header" let-columns>
-    <tr>
-      <th *ngFor="let col of columns">
-        {{col.header}}
-      </th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-rowData let-columns="columns">
-    <tr [pSelectableRow]="rowData">
-      <td *ngFor="let col of columns">
-        {{rowData[col.field]}}
-      </td>
-    </tr>
-  </ng-template>
-</p-table>
-
 <!-- Dialog window to add Customer-->
-<p-dialog header="Customer Details" [(visible)]="displayDialog" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200"
+<p-dialog header="Customer Details" [(visible)]="displayDialog" [modal]="true" [responsive]="true" [width]="450" [minWidth]="200"
   [minY]="70" [maximizable]="true" [baseZIndex]="10000">
-<form #customerForm="ngForm">
-  <div>
-    <h3 class="first">First Name</h3>
-    <input id="input" type="text" size="30" pInputText [(ngModel)]="data.firstName" [disabled]="!newCustomer" name="firstName" required >
-    <h3 class="first">Last Name</h3>
-    <input id="input" type="text" size="30" pInputText [(ngModel)]="data.lastName" [disabled]="!newCustomer" name="lastName" required >
-    <h3 class="first">Email Name</h3>
-    <input id="input" type="text" size="30" pInputText [(ngModel)]="data.email" name="email" required >
-  </div>
-  <p-footer>
-    <button type="button" pButton icon="pi pi-check" (click)="onOkClick()" label="Add" *ngIf="newCustomer" [disabled]="!customerForm.form.valid"></button>
-    <button type="button" pButton icon="pi pi-check" (click)="onSaveClick()" label="Save" *ngIf="!newCustomer" [disabled]="!customerForm.form.valid"></button>
-    <button type="button" pButton icon="pi pi-check" (click)="onDeleteClick()" label="Delete" *ngIf="!newCustomer" [disabled]="!customerForm.form.valid"></button>
-    <button type="button" pButton icon="pi pi-close" (click)="onNoClick()" label="Cancel" class="ui-button-secondary"></button>
-  </p-footer>
-</form>
+  <form #customerForm="ngForm">
+    <div>
+      <h3 class="first">First Name</h3>
+      <input id="input" type="text" size="30" pInputText [(ngModel)]="data.firstName" [disabled]="!newCustomer" name="firstName" required >
+      <h3 class="first">Last Name</h3>
+      <input id="input" type="text" size="30" pInputText [(ngModel)]="data.lastName" [disabled]="!newCustomer" name="lastName" required >
+      <h3 class="first">Email Name</h3>
+      <input id="input" type="text" size="30" pInputText [(ngModel)]="data.email" name="email" required >
+    </div>
+    <p-footer>
+      <button type="button" pButton icon="pi pi-check" (click)="onOkClick()" label="Add" *ngIf="newCustomer" [disabled]="!customerForm.form.valid"></button>
+      <button type="button" pButton icon="pi pi-check" (click)="onSaveClick()" label="Save" *ngIf="!newCustomer" [disabled]="!customerForm.form.valid"></button>
+      <button type="button" pButton icon="pi pi-check" (click)="onDeleteClick()" label="Delete" *ngIf="!newCustomer" [disabled]="!customerForm.form.valid"></button>
+      <button type="button" pButton icon="pi pi-close" (click)="onNoClick()" label="Cancel" class="ui-button-secondary"></button>
+    </p-footer>
+  </form>
 </p-dialog>
+
+<!-- Table to display Customers-->
+<div class="table-container">
+  <p-table [columns]="displayedColumns" [value]="customers" selectionMode="single" [(selection)]="data" (onRowSelect)="onRowSelect($event)"
+    [paginator]="true" [rows]="15">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{col.header}}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr [pSelectableRow]="rowData">
+        <td *ngFor="let col of columns">
+          {{rowData[col.field]}}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<!-- Add Customer button -->
+<br>
+<br>
+<div class="add-customer-button" >
+  <button type="button" pButton (click)="openDialog()" label="Add new Customer"></button>
+</div>
+
+<!-- Toast component -->
+<p-toast [style]="{marginTop: '80px'}"></p-toast>

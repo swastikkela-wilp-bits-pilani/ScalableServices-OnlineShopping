@@ -1,12 +1,15 @@
-<p-toast [style]="{marginTop: '80px'}"></p-toast>
-<div style="text-align: center;margin-top: 10px;">
-  <b>Welcome! Please navigate to desired module through menu!</b>
-</div>
-<div style="text-align: center; margin-top: 20px;">
-  <h3>Technology details</h3>
-  <p-organizationChart [value]="data" selectionMode="single" [(selection)]="selectedNode" (onNodeSelect)="onNodeSelect($event)">
-    <ng-template let-node >
-      {{node.label}}
-    </ng-template>
-  </p-organizationChart>
+<div id="background-image">
+  <!-- Your existing content here -->
+  <p-toast [style]="{marginTop: '80px'}"></p-toast>
+  <div class="welcome-text">
+    <b><h1>Welcome! Please navigate to the desired module through the menu!</h1></b>
+  </div>
+  <div class="technology-details">
+    <h3>Technology details</h3>
+    <p-organizationChart [value]="data" selectionMode="single" [(selection)]="selectedNode" (onNodeSelect)="onNodeSelect($event)">
+      <ng-template let-node >
+        {{node.label}}
+      </ng-template>
+    </p-organizationChart>
+  </div>
 </div>

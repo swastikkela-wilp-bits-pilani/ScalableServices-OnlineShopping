@@ -1,25 +1,33 @@
-<div style="margin-bottom: 10px">
-  <p-toast [style]="{marginTop: '80px'}"></p-toast>
-  <button type="button" pButton (click)="openDialog()" label="Add Item"></button>
+<div class="container">
+  <!-- Add Item button -->
+ <!-- Add Item button -->
+
+
+
+  <!-- Table to display items -->
+  <div class="table-container">
+    <p-table [columns]="displayedColumns" [value]="items" selectionMode="single" [(selection)]="data" (onRowSelect)="onRowSelect($event)"
+      [paginator]="true" [rows]="15">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+          <td *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
 </div>
-<p-table [columns]="displayedColumns" [value]="items" selectionMode="single" [(selection)]="data" (onRowSelect)="onRowSelect($event)"
-  [paginator]="true" [rows]="15">
-  <ng-template pTemplate="header" let-columns>
-    <tr>
-      <th *ngFor="let col of columns">
-        {{col.header}}
-      </th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-rowData let-columns="columns">
-    <tr [pSelectableRow]="rowData">
-      <td *ngFor="let col of columns">
-        {{rowData[col.field]}}
-      </td>
-    </tr>
-  </ng-template>
-</p-table>
-<p-dialog header="Add Customer" [(visible)]="displayDialog" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200"
+
+<!-- Dialog window to add item -->
+<p-dialog header="Add Item" [(visible)]="displayDialog" [modal]="true" [responsive]="true" [width]="450" [minWidth]="200"
   [minY]="70" [maximizable]="true" [baseZIndex]="10000">
   <span>
     <h3 class="first">Name</h3>
@@ -35,4 +43,12 @@
     <button type="button" pButton icon="pi pi-check" (click)="onDeleteClick()" label="Delete" *ngIf="!newItem"></button>
     <button type="button" pButton icon="pi pi-close" (click)="onNoClick()" label="Cancel" class="ui-button-secondary"></button>
   </p-footer>
+
+ 
 </p-dialog>
+<br>
+<br>
+<div class="add-item-button" >
+  <button type="button" pButton (click)="openDialog()" label="Add new Item"></button>
+</div>
+<p-toast [style]="{marginTop: '80px'}"></p-toast>
